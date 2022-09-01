@@ -1,0 +1,8 @@
+runtime: python310
+manual_scaling:
+  instances: 1
+
+handlers:
+- url: /slack/events
+  secure: always
+  script: auto
