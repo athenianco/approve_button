@@ -48,6 +48,9 @@ log = logging.getLogger("approve_button")
 
 @bolt_app.message(pr_re)
 def message_url(message, say):
+    log.info("message: %s", message)
+    if "thread_ts" in message:
+        return
     for match in pr_re.finditer(message["text"]):
         repo = match.group(1)
         number = int(match.group(2))
