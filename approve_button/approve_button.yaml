@@ -1,6 +1,8 @@
 runtime: python310
 manual_scaling:
   instances: 1
+service: default
+entrypoint: gunicorn main:app --workers 1 -c /config/gunicorn.py
 
 handlers:
 - url: /slack/events
