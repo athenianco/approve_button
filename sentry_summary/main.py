@@ -52,7 +52,7 @@ def format_value(name, value):
 
 @bolt_app.message(re.compile(r"performance|(request.*slow)|(slow.*request)"))
 def report_api_performance(message, say):
-    if "api" not in message["text"]:
+    if "api" not in message["text"].lower():
         return
     log.info("message: %s", message)
     thread_ts = message.get("thread_ts", message["ts"])
