@@ -1,4 +1,0 @@
-runtime: python310
-manual_scaling:
-  instances: 1
-service: sentry-summary
